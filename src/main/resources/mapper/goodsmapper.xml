@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.thomas.mapper.GoodsMapper">
+    <select id="selectAllGoods" resultType="com.thomas.domain.Goods">
+        select g_id,g_name,g_price,g_img,g_type,g_comment,g_amount from goods
+    </select>
+</mapper>

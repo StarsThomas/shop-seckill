@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.thomas.dao.SecKillGoodsMapper">
+    <resultMap id="BaseResultMap" type="com.thomas.domain.SecKillGoods">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="sk_id" jdbcType="VARCHAR" property="skId"/>
+        <result column="sk_goods_price" jdbcType="DOUBLE" property="skGoodsPrice"/>
+        <result column="sk_start_time" jdbcType="TIMESTAMP" property="startTime"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="endTime"/>
+        <result column="sk_goods_name" jdbcType="VARCHAR" property="skName"/>
+        <result column="sk_stock" jdbcType="INTEGER" property="skStock"/>
+    </resultMap>
+
+    <select id="selectSkPrice" resultType="java.lang.Double">
+            SELECT SK_GOODS_PRICE FROM SK_GOODS WHERE SK_ID = #{skId}
+    </select>
+</mapper>

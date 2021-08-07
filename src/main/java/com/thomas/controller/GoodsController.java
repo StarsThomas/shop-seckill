@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
 public class GoodsController {
     @Autowired
     private GoodsService goodsService;
+
 
     @GetMapping("/showGoods")
     public String showGoods(Model model){

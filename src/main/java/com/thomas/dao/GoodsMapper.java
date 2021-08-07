@@ -1,4 +1,4 @@
-package com.thomas.mapper;
+package com.thomas.dao;
 
 import com.thomas.domain.Goods;
 import org.apache.ibatis.annotations.Mapper;

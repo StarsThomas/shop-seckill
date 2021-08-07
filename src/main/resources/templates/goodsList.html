@@ -2,9 +2,47 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>商品列表</title>
+    <link rel="stylesheet" th:href="@{/static/css/bootstrap.css}">
 </head>
+
+
+<style type="text/css">
+    body {
+        background: #2E323B;
+    }
+
+    .piao {
+        text-align: center;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        width: 238px;
+        padding: 6px;
+        line-height: 20px;
+        background: #5f5f6d;
+    }
+</style>
+
 <body>
+<table bgcolor="0" align="center">
+    <tr>
+        <td th:each="goodsVo:${goodsList}">
+            <div style="width: 250px; margin:10px;">
+                <a href="#">
+                    <img th:src="@{${goodsVo.GImg}}"
+                         style="width: 250px;height: 380px"/>
+                </a>
+
+                <div class="piao">
+                    <p th:text="${goodsVo.GName}" style="color: white; top: 50px;"></p>
+                    原价:<del><p th:text="${goodsVo.GPrice}+￥" style="color: white; top: 50px;"></p></del>
+                    秒杀价:<p th:text="${goodsVo.skPrice}+￥" style="color: white; top: 50px;"></p>
+                    <p style="color: white; top: 50px;">立即抢购</p>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
 
 </body>
 </html>
